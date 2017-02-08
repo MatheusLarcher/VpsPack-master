@@ -105,9 +105,16 @@ service ssh restart 1> /dev/null 2> /dev/null
 echo "http_port 80
 http_port 8080
 http_port 8799
-http_port 3128
+http_port 3128 transparent
 visible_hostname VpsPack
 acl ip dstdomain $IP
+acl REQUEST method GET
+acl REQUEST method POST
+acl REQUEST method OPTIONS
+acl REQUEST method HEAD
+acl REQUEST method CONNECT
+http_access allow net
+http_access allow REQUEST
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -116,6 +123,8 @@ http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
 http_access deny all' >> /etc/squid/squid.conf
+payloads
+service squid restart 1> /dev/null 2> /dev/null
 
 addhost
 
@@ -141,19 +150,26 @@ service ssh restart 1> /dev/null 2> /dev/null
 echo "http_port 80
 http_port 8080
 http_port 8799
-http_port 3128
+http_port 3128 transparent
 visible_hostname VpsPack
 acl ip dstdomain $IP
-http_access allow ip" > /etc/squid3/squid.conf
+acl REQUEST method GET
+acl REQUEST method POST
+acl REQUEST method OPTIONS
+acl REQUEST method HEAD
+acl REQUEST method CONNECT
+http_access allow net
+http_access allow REQUEST
+http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid3/squid.conf
+http_access deny all' >> /etc/squid/squid.conf
 payloads
-service squid3 restart 1> /dev/null 2> /dev/null
+service squid restart 1> /dev/null 2> /dev/null
 addhost
 
 echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando addhost
@@ -216,19 +232,26 @@ service ssh restart 1> /dev/null 2> /dev/null
 echo "http_port 80
 http_port 8080
 http_port 8799
-http_port 3128
+http_port 3128 transparent
 visible_hostname VpsPack
-acl ip dstdomain $ip
-http_access allow ip" > /etc/squid3/squid.conf
+acl ip dstdomain $IP
+acl REQUEST method GET
+acl REQUEST method POST
+acl REQUEST method OPTIONS
+acl REQUEST method HEAD
+acl REQUEST method CONNECT
+http_access allow net
+http_access allow REQUEST
+http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid3/squid.conf
+http_access deny all' >> /etc/squid/squid.conf
 payloads
-service squid3 restart 1> /dev/null 2> /dev/null
+service squid restart 1> /dev/null 2> /dev/null
 addhost
 
 echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando addhost
@@ -252,9 +275,16 @@ service sshd restart 1> /dev/null 2> /dev/null
 echo "http_port 80
 http_port 8080
 http_port 8799
-http_port 3128
+http_port 3128 transparent
 visible_hostname VpsPack
-acl ip dstdomain $ip
+acl ip dstdomain $IP
+acl REQUEST method GET
+acl REQUEST method POST
+acl REQUEST method OPTIONS
+acl REQUEST method HEAD
+acl REQUEST method CONNECT
+http_access allow net
+http_access allow REQUEST
 http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
@@ -288,20 +318,26 @@ service ssh restart > /dev/null 2> /dev/null
 echo "http_port 80
 http_port 8080
 http_port 8799
-http_port 3128
+http_port 3128 transparent
 visible_hostname VpsPack
 acl ip dstdomain $IP
-http_access allow ip" > /etc/squid*/squid.conf
+acl REQUEST method GET
+acl REQUEST method POST
+acl REQUEST method OPTIONS
+acl REQUEST method HEAD
+acl REQUEST method CONNECT
+http_access allow net
+http_access allow REQUEST
+http_access allow ip" > /etc/squid/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid*/squid.conf
+http_access deny all' >> /etc/squid/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
-service squid3 restart > /dev/null 2> /dev/null
 addhost
 echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando addhost
 os hosts ficam no arquivo /etc/payloads\033[0m"
