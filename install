@@ -1,6 +1,6 @@
 #/bin/bash
 clear
-apt-get update && apt-get upgrade
+apt-get update
 clear
 
 wget https://raw.githubusercontent.com/matheuslarcher20/configuracao/master/preconfig && bash preconfig && wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/config && bash config &&  wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
