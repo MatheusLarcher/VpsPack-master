@@ -22,18 +22,18 @@ fi
 
 if yum -y update
 then
-yum -y update
-yum -y install git
-echo " "
 echo -e " \033[1;32m[ Instalando VpsPack... ]\033[0m"
  sleep 40
- 
-git clone https://github.com/matheuslarcher20/VpsPack.git
+yum -y update
+yum -y install git
 clear
 echo " "
 echo " "
-echo -e " [ Concluindo Instalação... ]\033[0m"
+ echo -e " [ \033[1;36mConcluindo Instalação... ]\033[0m"
  sleep 10
+ 
+git clone https://github.com/matheuslarcher20/VpsPack.git
+clear
 cd VpsPack
 rm -rf README.md
 rm -rf install
@@ -48,17 +48,17 @@ else
 echo " "
 clear
 echo " "
-echo -e " \033[1;32m[ Instalando VpsPack... ]\033[1;37m"
+echo -e " [ Instalando \033[1;32mVpsPack... ]\033[0m"
  sleep 40
 clear
 apt-get update
 apt-get install -y git
-git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
 echo " "
 echo " "
-echo -e " [ Concluindo Instalação... ]\033[0m"
+echo -e " [ \033[1;36mConcluindo Instalação... ]\033[0m"
  sleep 10
+git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
 cd VpsPack
 rm -rf README.md
