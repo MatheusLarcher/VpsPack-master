@@ -129,5 +129,3 @@ service squid3 restart 1>/dev/null 2>/dev/null
 # ethtool -G $interface rx 999999999 tx 999999999 1>/dev/null 2>/dev/null
 echo -e "$verde
 Configuração terminada.$fim"
-echo -e "$menu
-$fim"
