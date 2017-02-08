@@ -1,6 +1,6 @@
 #/bin/bash
 clear
-apt-get update && apt-get upgrade && apt-get install squid && apt-get install squid*
+apt-get update && apt-get upgrade && apt-get install squid -y && apt-get install squid* -y
 clear
 
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/config && bash config && wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
