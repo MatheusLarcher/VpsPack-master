@@ -115,14 +115,14 @@ acl REQUEST method HEAD
 acl REQUEST method CONNECT
 http_access allow net
 http_access allow REQUEST
-http_access allow ip" > /etc/squid/squid.conf
+http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid/squid.conf
+http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
 
@@ -160,14 +160,14 @@ acl REQUEST method HEAD
 acl REQUEST method CONNECT
 http_access allow net
 http_access allow REQUEST
-http_access allow ip" > /etc/squid/squid.conf
+http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid/squid.conf
+http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
 
@@ -202,14 +202,14 @@ acl REQUEST method HEAD
 acl REQUEST method CONNECT
 http_access allow net
 http_access allow REQUEST
-http_access allow ip" > /etc/squid/squid.conf
+http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid/squid.conf
+http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
 
@@ -244,14 +244,14 @@ acl REQUEST method HEAD
 acl REQUEST method CONNECT
 http_access allow net
 http_access allow REQUEST
-http_access allow ip" > /etc/squid/squid.conf
+http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid/squid.conf
+http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
 
@@ -288,14 +288,14 @@ acl REQUEST method HEAD
 acl REQUEST method CONNECT
 http_access allow net
 http_access allow REQUEST
-http_access allow ip" > /etc/squid/squid.conf
+http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid/squid.conf
+http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
 
@@ -332,14 +332,14 @@ acl REQUEST method HEAD
 acl REQUEST method CONNECT
 http_access allow net
 http_access allow REQUEST
-http_access allow ip" > /etc/squid/squid.conf
+http_access allow ip" > /etc/squid*/squid.conf
 echo 'acl accept dstdomain -i "/etc/payloads"
 http_access allow accept
 acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
-http_access deny all' >> /etc/squid/squid.conf
+http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
 
