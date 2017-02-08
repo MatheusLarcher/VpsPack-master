@@ -22,9 +22,11 @@ fi
 
 if yum -y update
 then
-cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
+cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/20//' |sed 's/	//' > /etc/so 
 yum -y update
 yum -y install git
+echo " [ Instalando VpsPack ] "
+ sleep 20
 git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
 cd VpsPack
@@ -38,7 +40,7 @@ chmod +x /bin/$arqs
 done
 echo -e "\033[1;33mConcluido, Execute o comando \033[1;32mVpsPack\033[1;33m como root \033[0m"
 else
-cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
+cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/20//' |sed 's/	//' > /etc/so 
 apt-get update
 apt-get install -y git
 git clone https://github.com/matheuslarcher20/VpsPack.git
