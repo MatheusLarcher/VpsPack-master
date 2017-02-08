@@ -28,7 +28,7 @@ clear
 echo " "
 clear
 echo " Seu endereço de
- IP $corPadrao [$purple $IP $corPadrao ] "
+ IP [ $IP ] "
 echo " "
 read -p "Seu IP esta correto acima? [s/n]: " ip
 fi
