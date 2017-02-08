@@ -41,8 +41,8 @@ echo -e "\033[1;33mConcluido, Execute o comando \033[1;32mVpsPack\033[1;33m como
 else
 echo " "
 clear
-echo -e " \033[1;32m  Instalando VpsPack 
-         Aguarde...\033[0m
+echo -e " \033[1;32mInstalando VpsPack 
+         Aguarde...\033[0m"
  sleep 30
 apt-get update
 apt-get install -y git
