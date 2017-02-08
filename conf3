@@ -19,28 +19,16 @@ else
 fi
 
 cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
-echo -e "\033[1;31mPara a instalação ser correta é preciso o ip.
 apt-get install curl -y
 IP=$(curl https://api.ipify.org/) 
 clear
- echo " [ Configurando seu VPS ] "
+echo " [ Configurando seu VPS ] "
  sleep 3
-echo " "
 clear
-echo " Seu endereço de
- IP [ $IP ] "
 echo " "
-read -p "Seu IP esta correto acima? [s/n]: " ip
-fi
-
-if [ "$ip" = "s" ]
-then
-echo "Ok
-     Aguarde"
-if [ "$ip" = "n" ]
-then 
-Digite o ip !\033[0m"
-read -p ": " ip
+echo " Seu endereço de
+IP [ $IP ] "
+echo " "
 clear
 echo -e "\033[1;31m-----> \033[01;37mScript Feito por \033[01;32mMatheus Larcher\033[0m"
 echo -e "\033[1;31m-----> \033[01;37mSeu sistema operacional:\033[1;31m $(cat /etc/so)"
