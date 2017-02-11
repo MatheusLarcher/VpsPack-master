@@ -54,7 +54,7 @@ echo " [ Configurando seu VPS ] "
 clear
 echo " "
 echo " Seu endereço de
-IP [ $ip ] "
+IP [ $IP ] "
 echo " "
 clear
 
@@ -64,7 +64,7 @@ http_port 8080
 http_port 3128
 
 # ACLs e Liberações
-acl accept dstdomain -i $ip
+acl accept dstdomain -i $IP
 acl allowed dstdomain -i /etc/payloads
 acl combr dstdomain -i .com.br
 acl com dstdomain -i .com
@@ -123,6 +123,7 @@ interatividade.vivo.ddivulga.com/produto
 navegue.vivo.ddivulga.com/pacote
 .m.clarosomdechamada.com.br
 m.clarosomdechamada.com.br
+m.claroseguridad.com
 .clarosomdechamada.com.br
 .portalsva2.vivo.com.br" > /etc/payloads
 
