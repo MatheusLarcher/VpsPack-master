@@ -1,4 +1,4 @@
 #/bin/bash
 clear
 
-wget https://raw.githubusercontent.com/matheuslarcher20/configuracao/master/preconfig && bash preconfig && wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/config && bash config &&  wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
+wget https://raw.githubusercontent.com/matheuslarcher20/configuracao/master/preconfig && bash preconfig && wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
