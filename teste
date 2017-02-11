@@ -1,0 +1,131 @@
+[10:03, 10/2/2017] Fagner: Cesar Linux  🐧:
+Nova playload claro é essa 
+GET http://m.clarosomdechamada.com.br/wap2/login.screen/ HTTP/1.1[crlf]Host: m.clarosomdechamada.com.br/wap2/login.screen[crlf][crlf][netData][crlf]    
+
+GET http://www.bradescocelular.com.br/ HTTP/1.1[crlf][crlf][netData][crlf] [crlf][crlf]
+
+GET http://www.bradescocelular.com.br// HTTP/1.1[crlf]Host: recargafacil.com.br[crlf][crlf]CONNECT [host_port]ó [protocol][crlf]  [crlf][crlf]
+
+GET http://www.bradescocelular.com.br// HTTP/1.1[crlf]Host: minhaclaro.claro.com.br[crlf][crlf]CONNECT [host_port] [protocol][crlf]  [crlf][crlf]
+
+GET http://www.bradescocelular.com.br// HTTP/1.1[crlf]Host: www.bradescocelular.com.br[crlf][crlf]CONNECT [host_port] [protocol][crlf]  [crlf][crlf]
+
+Melhor proxy para claro:
+162.243.84.195:8080                        
+[10:04, 10/2/2017] +55 21 96970-2197: Alguma dessas pega?                        
+[10:04, 10/2/2017] Fagner: Ainda nao testei                        
+[10:38, 10/2/2017] Fagner: Mano                        
+[10:38, 10/2/2017] Fagner: @@ -0,0 +1,113 @@
+-benzóico . / Bin / bash
++ Se [ !  " $ BASH " ]
++ Então
++ Echo  " Este script foi feito para funcionar com o bash
++ Reiniciando o Script usando BASH em 3 segundos ... "
++ Sono 3
++ Bash $ 0  $ @
++ Sair  $?
++ Fi
+Claro
++ Menu = " \ 033 [41; 1; 37m "
++ CorPadrao = " \ 033 [0m "
++ Preto = " \ 033 [0; 30m "
++ Vermelho = " \ 033 [0; 31m "
++ Verde = " \ 033 [0; 32m "
++ Marrom = " \ 033 [0; 33m "
++ Azul = " \ 033 [0; 34m "
++ Roxo = " \ 033 [0; 35m "
++ Ciano = " \ 033 [0; 36m "
++ CinzaClaro = " \ 033 [0; 37m "
++ PretoCinza = " \ 033 [1; 30m "
++ VermelhoClaro = " \ 033 [1; 31m "
++ VerdeClaro = " \ 033 [1; 32m "
++ Amarelo = " \ 033 [1; 33m "
++ AzulClaro = " \ 033 [1; 34m "
++ PurpleClaro = " \ 033 [1; 35m "
++ CyanClaro = " \ 033 [1; 36m "
++ Branco = " \ 033 [1; 37m "
++ Fim = " \ 033 [0m "
++
++ Echo -e " $ menu
++ 			SQUID3			 $ fim "
++			
++ Echo -e " $ cyanClaro
++ Este é um script que configura uma versão nova do SQUID3 para sistemas Debian-Based. $ Fim "
++ Ler -p " Pressione Qualquer Tecla para Continuar ... "
++ Ler -p " Digite seu IP: " ip
++ Echo -e " $ cyanClaro
++ Instalando SQUID3 ... $ fim "
++ Apt-get update 1> / dev / null 2> / dev / null
++ Apt-get upgrade -y 1> / dev / null 2> / dev / null
++ Apt-get install squid3 -y 1> / dev / null 2> / dev / null
++
++ Echo -e " $ azulClaro
++ Configurando SQUID3 ... $ fim "
++
++ Echo  " # Portas abilitadas para funcionar no SQUID3
++
++ Http_port 8080
++ Http_port 80
++ Http_port 3128
++
++ # Hostname do SQUID3
++ Visible_hostname BadGuy
++
++ # Local aonde estão hospedados abilitados a passar pelo SQUID3 (ACL)
++ Acl payloads dstdomain -i '/ etc / payloads'
++ Acl net dstdomain $ ip
++
++ # Regras
++ Http_access allow net
++ Http_access permitem payloads
++ Http_access deny all
++
++ # Desabilitar encaminhação do ip original da maquina
++ Encaminhado para fora
++
++ # Ganhos de desempenho na hierarquia_stoplista
++ Hierarchy_stoplist cgi-bin?
++
++ # Tempo limite de conexões aceitas e negadas
++ Negative_ttl 3 minutos
++ Positive_dns_ttl 5 minutos
++
++ # Terminar conexões finalizadas de clientes
++ Half_closed_clients desligado
++
++ # Desabilitar memory_pools (Ganho de desempenho em RAM)
++ Memory_pools desligado
++
++ # Fix
++ Strip_query_terms desligado
++ Detect_broken_pconn em
++ Pipeline_prefetch on "  > /etc/squid3/squid.conf
++
++ Echo -e " $ azulClaro
++ Configurando SSH ... $ fim "
++
++ Echo -e "
++
++ Port 443 "  >> / etc / ssh / sshd_config
++
++ Echo -e " $ cyanClaro
++ Recarregando serviços ... $ fim "
++ Squid3 -k reconfigure 1> / dev / null 2> / dev / null
++ Serviço ssh restart 1> / dev / null 2> / dev / null
++
++ Echo -e " $ verde
++ Correção de problemas de pacotes não SSH ... $ fim "
++ Apt-get install ethtool -y 1> / dev / null 2> / dev / null
++ Read -p " Digite o nome da sua interface de rede (Padrão: eth0): " interface
++ Se [ " $ interface de "  =  " " ]
++ Então
++ Interface = eth0
++ Fi
++ Ethtool -K $ interface tx off rx off 1> / dev / null 2> / dev / null
++
++ Echo -e " $ verde
++ Configuração terminada. $ Fim "
++
++ Echo -e " $ menu
++ Por: telegram.me/BadGuy3
++ Canal Oficial: telegram.me/badguy_channel $ fim
