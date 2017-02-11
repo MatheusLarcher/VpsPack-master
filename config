@@ -78,6 +78,7 @@ chmod a+x /bin/addhost
 }
 
 function payloads(){ echo "minhaclaro.claro.com.br
+m.claroseguridad.com
 recargafacil.claro.com.br
 frontend.claro.com.br
 appfb.claro.com.sv
