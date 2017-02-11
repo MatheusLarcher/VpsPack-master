@@ -86,8 +86,6 @@ forwarded_for off
 echo -e "$azulClaro
 Configurando SSH...$fim"
 
-echo -e "
-
 echo "Port 22
 Port 443
 Protocol 2
