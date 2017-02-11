@@ -123,6 +123,8 @@ acl local dstdomain localhost
 http_access allow local
 acl iplocal dstdomain 127.0.0.1
 http_access allow iplocal
+forwarded_for off
+via off
 http_access deny all' >> /etc/squid*/squid.conf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
