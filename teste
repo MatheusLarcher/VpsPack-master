@@ -1,21 +1,3 @@
-[10:03, 10/2/2017] Fagner: Cesar Linux  🐧:
-Nova playload claro é essa 
-GET http://m.clarosomdechamada.com.br/wap2/login.screen/ HTTP/1.1[crlf]Host: m.clarosomdechamada.com.br/wap2/login.screen[crlf][crlf][netData][crlf]    
-
-GET http://www.bradescocelular.com.br/ HTTP/1.1[crlf][crlf][netData][crlf] [crlf][crlf]
-
-GET http://www.bradescocelular.com.br// HTTP/1.1[crlf]Host: recargafacil.com.br[crlf][crlf]CONNECT [host_port]ó [protocol][crlf]  [crlf][crlf]
-
-GET http://www.bradescocelular.com.br// HTTP/1.1[crlf]Host: minhaclaro.claro.com.br[crlf][crlf]CONNECT [host_port] [protocol][crlf]  [crlf][crlf]
-
-GET http://www.bradescocelular.com.br// HTTP/1.1[crlf]Host: www.bradescocelular.com.br[crlf][crlf]CONNECT [host_port] [protocol][crlf]  [crlf][crlf]
-
-Melhor proxy para claro:
-162.243.84.195:8080                        
-[10:04, 10/2/2017] +55 21 96970-2197: Alguma dessas pega?                        
-[10:04, 10/2/2017] Fagner: Ainda nao testei                        
-[10:38, 10/2/2017] Fagner: Mano                        
-[10:38, 10/2/2017] Fagner: @@ -0,0 +1,113 @@
 -benzóico . / Bin / bash
 + Se [ !  " $ BASH " ]
 + Então
