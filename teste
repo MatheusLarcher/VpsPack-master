@@ -1,21 +1,21 @@
 -benzóico . / Bin / bash
-+ Se [ !  " $ BASH " ]
-+ Então
-+ Echo  " Este script foi feito para funcionar com o bash
-+ Reiniciando o Script usando BASH em 3 segundos ... "
-+ Sono 3
-+ Bash $ 0  $ @
-+ Sair  $?
-+ Fi
+if [ !  " $ BASH " ]
+then
+Echo  " Este script foi feito para funcionar com o bash
+Reiniciando o Script usando BASH em 3 segundos ... "
+Sono 3
+Bash $ 0  $ @
+exit  $?
+Fi
 Claro
-+ Menu = " \ 033 [41; 1; 37m "
-+ CorPadrao = " \ 033 [0m "
-+ Preto = " \ 033 [0; 30m "
-+ Vermelho = " \ 033 [0; 31m "
-+ Verde = " \ 033 [0; 32m "
-+ Marrom = " \ 033 [0; 33m "
-+ Azul = " \ 033 [0; 34m "
-+ Roxo = " \ 033 [0; 35m "
+Menu = " \ 033 [41; 1; 37m "
+CorPadrao = " \ 033 [0m "
+Preto = " \ 033 [0; 30m "
+Vermelho = " \ 033 [0; 31m "
+Verde = " \ 033 [0; 32m "
+Marrom = " \ 033 [0; 33m "
+Azul = " \ 033 [0; 34m "
+Roxo = " \ 033 [0; 35m "
 + Ciano = " \ 033 [0; 36m "
 + CinzaClaro = " \ 033 [0; 37m "
 + PretoCinza = " \ 033 [1; 30m "
