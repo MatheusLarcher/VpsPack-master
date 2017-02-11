@@ -28,6 +28,7 @@ cyanClaro="\033[1;36m"
 branco="\033[1;37m"
 fim="\033[0m"
 
+
 echo -e "$menu
                         SQUID3                  $fim"
 
@@ -43,6 +44,19 @@ apt-get install squid3 -y 1>/dev/null 2>/dev/null
 
 echo -e "$azulClaro
 Configurando SQUID3...$fim"
+
+cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
+apt-get install curl -y
+IP=$(curl https://api.ipify.org/) 
+clear
+echo " [ Configurando seu VPS ] "
+ sleep 3
+clear
+echo " "
+echo " Seu endereço de
+IP [ $ip ] "
+echo " "
+clear
 
 echo "# Portas do SQUID
 http_port 80
