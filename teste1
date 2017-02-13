@@ -1,4 +1,7 @@
 #!/bin/bash
+echo -e "\033[1;31m Compilando o Squid V5 \033[1;37m(Demora bastante)\033[0m"
+echo -e "\033[1;37m Aperte [ \033[1;32mEntrer\033[0m ] para continuar ou [ \033[1;32mctrl + c\033[0m ] para sair"
+read inut
 cd
 mkdir /usr 1>/dev/null 2>/dev/null
 rm squidv5.tar.gz 1>/dev/null 2>/dev/null
