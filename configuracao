@@ -58,6 +58,7 @@ IP [ $IP ] "
 echo " "
 clear
 
+rm /etc/squid3/squid.conf
 echo "# Portas do SQUID
 http_port 80
 http_port 8080
