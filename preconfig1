@@ -86,6 +86,7 @@ forwarded_for off
 echo -e "$azulClaro
 Configurando SSH...$fim"
 
+rm /etc/ssh/sshd_config
 echo "Port 22
 Port 443
 Protocol 2
@@ -95,6 +96,7 @@ SyslogFacility AUTH
 LogLevel INFO
 LoginGraceTime 120
 PermitRootLogin yes
+PermitTunnel yes
 StrictModes yes
 RSAAuthentication yes
 PubkeyAuthentication yes
