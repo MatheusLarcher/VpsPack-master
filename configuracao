@@ -83,7 +83,7 @@ http_access allow vps3
 http_access allow vps4
 http_access allow vps5
 http_access allow vps6
-cache deny all
+#cache deny all
 http_access deny all
 
 # Anonimo
@@ -151,6 +151,9 @@ echo -e "
 .speedtest.net
 .tim.com.br
 .timanamaria.com.br
+www.timbeta.com.br
+www.developers.deezer.com.br
+www.timmusicstore.com.br
 .vivo.com.br
 .d1n212ccp6ldpw.cloudfront.net
 .rdio.com
