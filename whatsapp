@@ -1,7 +1,5 @@
 #!/bin/bash
-wget='/usr/bin/wget'
-ipt='/sbin/iptables'
-url='https://www.whatsapp.com/cidr.txt'
+ipt=$(/etc/whatsapp)
 ipt_target='ACCEPT'
 $ipt -N WHATSAPP
 $ipt -A FORWARD -j WHATSAPP
