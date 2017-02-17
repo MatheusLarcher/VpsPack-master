@@ -5,5 +5,5 @@ $ipt -N WHATSAPP
 $ipt -A FORWARD -j WHATSAPP
 $ipt -F WHATSAPP
 $ipt -I WHATSAPP -j RETURN
-for node in `$wget -q --no-check-certificate -O - $url | sort | uniq`; do $ipt -I WHATSAPP -d $node -p tcp --dport 80 -j $ipt_target
+for node in `$ipt -q --no-check-certificate -O - $ipt | sort | uniq`; do $ipt -I WHATSAPP -d $ipt -p tcp --dport 80 -j $ipt_target
 done
