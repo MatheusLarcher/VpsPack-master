@@ -1,5 +1,5 @@
 #!/bin/bash
-ipt=$(/etc/whatsapp)
+ipt=$(cat /etc/whatsapp)
 ipt_target='ACCEPT'
 $ipt -N WHATSAPP
 $ipt -A FORWARD -j WHATSAPP
