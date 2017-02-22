@@ -59,7 +59,7 @@ echo " "
 clear
 
 rm /bin/IPVPS
-echo "146.185.182.211" > /bin/IPVPS
+echo "$IP" > /bin/IPVPS
 rm /etc/squid3/squid.conf
 echo "# Portas do SQUID
 http_port 80
