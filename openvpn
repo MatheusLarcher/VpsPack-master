@@ -63,7 +63,6 @@ newclient () {
 # and to avoid getting an IPv6.
 		
 IP=$(wget -4qO- "http://whatismyip.akamai.com/")
-fi
 
 if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
