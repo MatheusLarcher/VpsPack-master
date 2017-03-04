@@ -1,0 +1,5 @@
+#/bin/bash
+clear
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/configuracao && bash configuracao
+
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install 
