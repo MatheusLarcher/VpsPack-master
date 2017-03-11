@@ -59,7 +59,7 @@ IP [ $IP ] "
 echo " "
 clear
 
-rm /bin/IPVPS
+rm /bin/IPVPS 2> /dev/null
 echo "$IP" > /bin/IPVPS
 rm /etc/squid3/squid.conf
 echo "# Portas do SQUID
