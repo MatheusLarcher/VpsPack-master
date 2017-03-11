@@ -38,8 +38,8 @@ if [[ "$resposta" = 's' ]]; then
 	rm -r cmake*
 	mkdir badvpn-build
 	cd badvpn-build
-	wget http://mirror2.f4st.host/archlinux/community/os/x86_64/badvpn-1.999.130-1-x86_64.pkg.tar.bz2
-	tar xf badvpn-1.999.130-1-x86_64.pkg.tar.bz2
+	wget http://mirror2.f4st.host/archlinux/community/os/x86_64/badvpn-1.999.130-1-x86_64.pkg.tar.xz
+	tar xf badvpn-1.999.130-1-x86_64.pkg.tar.xz
 	cd bad*
 	cmake -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1
 	make install
