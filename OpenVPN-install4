@@ -181,6 +181,6 @@ if [[ "$sshcompression" = 'n' ]]; then
 fi
 echo -e "\033[0m"
 
-rm OpenVPN-install*
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN && bash OpenVPN
 echo -e "\033[0m"
+rm OpenVPN* 
