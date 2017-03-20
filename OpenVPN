@@ -31,11 +31,6 @@ branco="\033[1;37m"
 
 # Detect Debian users running the script with "sh" instead of bash
 
-echo -e "\033[0m"
-echo ""
-mv OpenVPN /bin/OpenVPN
-chmod +x /bin/OpenVPN
-
 if readlink /proc/$$/exe | grep -qs "dash"; then
 	echo "This script needs to be run with bash, not sh"
 	exit 1
@@ -442,3 +437,7 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo -e "\033[1;32m Para mais opções digite (OpenVPN ou PackSSH)! \033[0m"
 fi
 echo -e "\033[0m"
+echo ""
+mv OpenVPN /bin/OpenVPN
+chmod +x /bin/OpenVPN
+echo ""
