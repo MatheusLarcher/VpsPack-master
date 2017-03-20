@@ -4,7 +4,7 @@ echo "● Instalar e configurar o proxy squid nas portas 80, 3128, 8080 e 8799" 
 echo "● Configurar o OpenSSH para rodar na porta 22"
 echo "● Configurar o OpenVPN para rodar na porta 443" ; tput sgr0
 echo ""
- 
+ cd
 IP=$(wget -qO- ipv4.icanhazip.com)
 read -p "Para continuar confirme o IP deste servidor: " -e -i $IP ipdovps
 if [ -z "$ipdovps" ]
