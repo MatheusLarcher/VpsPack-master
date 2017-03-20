@@ -159,7 +159,7 @@ clear
 echo "Configurando OpenVPN"
 sleep 3s
 
-
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN && bash OpenVPN
 
 
 
