@@ -118,7 +118,6 @@ via off
 
 echo "Configurando SSH..."
 rm /etc/ssh/sshd_config
-grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
 echo "
 Port 22
 Protocol 2
