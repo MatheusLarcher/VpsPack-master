@@ -165,18 +165,6 @@ via off
 	fi
 fi
 
-clear
-echo ""
-echo "Configurando OpenVPN"
-sleep 3s
-
-wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN && bash OpenVPN
-mv OpenVPN /bin/OpenVPN
-chmod +x /bin/OpenVPN
-rm OpenVPN-install*
-service openvpn restart
-echo ""
-echo ""
 echo -e "Proxy Squid Instalado e rodando nas portas: \033[1;32m80, 3128, 8080 \033[0me\033[1;32m 8799\033[0m"
 echo -e "\033[1;32mOpenSSH\033[0m rodando na porta \033[1;32m22\033[0m"
 echo -e "\033[1;32mOpenVPN\033[0m rodando na porta \033[1;32m443\033[0m"
@@ -192,7 +180,6 @@ if [[ "$sshcompression" = 'n' ]]; then
 	grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
 fi
 exit 1
-
-
-
-
+echo -e "\033[0m"
+rm OpenVPN-install*
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN && bash OpenVPN
