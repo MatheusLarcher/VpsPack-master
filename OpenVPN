@@ -33,8 +33,6 @@ branco="\033[1;37m"
 
 echo -e "\033[0m"
 echo ""
-echo "Configurando OpenVPN"
-sleep 3s
 mv OpenVPN /bin/OpenVPN
 chmod +x /bin/OpenVPN
 
