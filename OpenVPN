@@ -441,3 +441,4 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;32m" ~/"$CLIENT.ovpn"
 	echo -e "\033[1;32m Para mais opções digite (OpenVPN ou PackSSH)! \033[0m"
 fi
+echo -e "\033[0m"
