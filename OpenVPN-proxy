@@ -149,6 +149,7 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes
 Compression yes" >> /etc/ssh/sshd_config
 fi
+rm OpenVPN-proxy*
 echo "pronto"
 
 
