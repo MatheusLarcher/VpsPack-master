@@ -431,8 +431,6 @@ verb 3" > /etc/openvpn/client-common.txt
 	newclient "$CLIENT"
 
 service openvpn restart
-mv OpenVPN /bin/OpenVPN
-chmod +x /bin/OpenVPN
 	echo ""
 	echo -e "\033[0;31m CONCLUIDO...! \033[0;31m"
 	sleep 2
