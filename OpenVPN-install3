@@ -68,6 +68,7 @@ then
 http_port 80
 http_port 8080
 http_port 3128
+http_port 8799
 
 # ACLs e Liberações
 acl vps1 dstdomain -i 127.0.0.1
@@ -118,6 +119,7 @@ then
 http_port 80
 http_port 8080
 http_port 3128
+http_port 8799
 
 # ACLs e Liberações
 acl vps1 dstdomain -i 127.0.0.1
