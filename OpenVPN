@@ -1,3 +1,24 @@
+#!/bin/bash
+# OpenVPN road warrior installer for Debian, Ubuntu and CentOS
+
+# This script will work on Debian, Ubuntu, CentOS and probably other distros
+# of the same families, although no support is offered for them. It isn't
+# bulletproof but it will probably work if you simply want to setup a VPN on
+# your Debian/Ubuntu/CentOS box. It has been designed to be as unobtrusive and
+# universal as possible.
+
+
+# Detect Debian users running the script with "sh" instead of bash
+if readlink /proc/$$/exe | grep -qs "dash"; then
+	echo "Este script precisa ser executado com o interpretador bash, não com o interpretador sh."
+	exit 1
+fi
+
+if [[ "$EUID" -ne 0 ]]; then
+	echo "Desculpe, você precisa executar esse script como root."
+	exit 2
+fi
+
 if [[ ! -e /dev/net/tun ]]; then
 	echo "O Adaptador TUN não está disponível. Entre em contato com o suporte do seu serviço de hospedagem."
 	exit 3
@@ -39,7 +60,16 @@ newclient () {
 	echo "</tls-auth>" >> ~/$1.ovpn
 }
 
-clear
+# Try to get our IP from the system and fallback to the Internet.
+# I do this to make the script compatible with NATed servers (lowendspirit.com)
+# and to avoid getting an IPv6.
+IP=$(wget -qO- ipv4.icanhazip.com)
+fi
+
+if [[ -e /etc/openvpn/server.conf ]]; then
+	while :
+	do
+	clear
 		tput setaf 3 ; echo "Parece que o OpenVPN já está instalado." ; tput sgr0
 		echo ""
 		echo "O que você quer fazer?"
@@ -153,12 +183,11 @@ else
 	echo "Eu preciso te perguntar algumas coisas antes de começar a configurar."
 	echo "Para confirmar a resposta padrão basta apertar a tecla ENTER"
 	echo ""
-  IP=$(wget -qO- ipv4.icanhazip.com)
 	echo "Primeiro eu preciso saber o endereço IPv4 da interface de rede externa do seu servidor."
 	read -p "Endereço IP: " -e -i $IP IP
 	echo ""
 	echo "Em qual porta você quer rodar o OpenVPN?"
-	read -p "Porta: " -e -i 443 PORT
+	read -p "Porta: " -e -i 8090 PORT
 	echo ""
 	echo "Qual DNS você quer usar com este VPN?"
 	echo ""
@@ -169,12 +198,12 @@ else
 	echo "   5) Hurricane Electric"
 	echo "   6) Verisign"
 	echo ""
-	read -p "DNS [1-6]: " -e -i 2 DNS
+	read -p "DNS [1-6]: " -e -i 6 DNS
 	echo ""
 	echo "Pronto, agora me diga um nome para o certificado do usuário."
 	echo "Por favor, use apenas uma única palavra, sem caracteres especiais."
 	echo ""
-	read -p "Nome do usuário: " -e -i teste CLIENT
+	read -p "Nome do usuário: " -e -i cliente CLIENT
 	echo ""
 	echo "Certo, isso é tudo o que eu precisava. Nós já estamos prontos para configurar o seu servidor OpenVPN"
 	echo ""
