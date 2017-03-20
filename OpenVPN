@@ -102,7 +102,7 @@ echo ""
 		echo -e "\033[1;34m   1) Adicionar novo usuário\033[1;34m"
 		echo -e "\033[1;34m   2) Remover um usuário\033[1;34m"
 		echo -e "\033[1;34m   3) Remover OpenVPN\033[1;34m"
-		echo -e "\033[1;34m   4) Sair\033[1;34m
+		echo -e "\033[1;34m   4) Sair\033[0m
 		"
 		read -p "Selecione a opção [1-4]: " option
 		case $option in
