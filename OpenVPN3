@@ -189,7 +189,7 @@ else
 	read -p "Endereço IP: " -e -i $IP IP
 	echo ""
 	echo "Em qual porta você quer rodar o OpenVPN?"
-	read -p "Porta: " -e -i 8090 PORT
+	read -p "Porta: " -e -i 443 PORT
 	echo ""
 	echo "Qual DNS você quer usar com este VPN?"
 	echo ""
@@ -200,7 +200,7 @@ else
 	echo "   5) Hurricane Electric"
 	echo "   6) Verisign"
 	echo ""
-	read -p "DNS [1-6]: " -e -i 6 DNS
+	read -p "DNS [1-6]: " -e -i 2 DNS
 	echo ""
 	echo "Pronto, agora me diga um nome para o certificado do usuário."
 	echo "Por favor, use apenas uma única palavra, sem caracteres especiais."
