@@ -154,7 +154,7 @@ if [ ! -f "/etc/init.d/ssh" ]
 		/etc/init.d/ssh reload > /dev/null
 	fi
 fi
-rm OpenVPN-proxy*
+rm OpenVPN-install*
 clear
 echo "Configurando OpenVPN"
 sleep 3s
