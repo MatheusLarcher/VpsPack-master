@@ -179,7 +179,6 @@ fi
 if [[ "$sshcompression" = 'n' ]]; then
 	grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
 fi
-exit 1
 
 # OpenVPN instalador para Debian, Ubuntu e CentOS
 
