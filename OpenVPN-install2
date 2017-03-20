@@ -2,33 +2,10 @@
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "VPS Manager 2.0.1 (versão gratuita)" ; tput sgr0
 tput setaf 3 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
 echo "● Instalar e configurar o proxy squid nas portas 80, 3128, 8080 e 8799" ; echo "  para permitir conexões SSH para este servidor"
-echo "● Configurar o OpenSSH para rodar nas portas 22 e 443"
-echo "● Instalar um conjunto de scripts como comandos do sistema para o gerenciamento de usuários" ; tput sgr0
+echo "● Configurar o OpenSSH para rodar na porta 22"
+echo "● Configurar o OpenVPN para rodar na porta 443" ; tput sgr0
 echo ""
-tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-tput setaf 2 ; tput bold ; echo "	Termos de Uso" ; tput sgr0
-echo ""
-echo "Ao utilizar esta versão GRATUITA do 'VPS Manager 2.0' você concorda com os seguintes termos de uso:"
-echo ""
-echo "1. Você pode:" 
-echo "a. Instalar e usar o 'VPS Manager 2.0' no(s) seu(s) servidor(es)." 
-echo "b. Criar, gerenciar e remover um número ilimitado de usuários através desse conjunto de scripts." 
-echo "" 
-tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-echo "2. Você não pode:" 
-echo "a. Editar, modificar, compartilhar ou redistribuir (gratuitamente ou comercialmente)" 
-echo "esse conjunto de scripts sem autorização do desenvolvedor." 
-echo "b. Modificar ou editar o conjunto de scripts para fazer você parecer o desenvolvedor dos scripts." 
-echo "" 
-echo "3. Você aceita que:" 
-echo "a. Esta cópia GRATUITA do VPS Manager 2.0 não inclui NENHUM tipo garantia ou suporte promocional, sendo estes exclusivos da versão paga do VPS Manager 2.0."
-echo "b. O usuário desse conjunto de scripts é o único resposável por qualquer tipo de implicação"
-echo "ética ou legal causada pelo uso desse conjunto de scripts para qualquer tipo de finalidade."
-echo "" 
-tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
-echo "4. Você concorda que o desenvolvedor não se responsabilizará por nenhum tipo de problemas ocorridos durante o uso dessa versão GRATUITA do VPS Manager 2.0."
-echo ""
-tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
+ 
 IP=$(wget -qO- ipv4.icanhazip.com)
 read -p "Para continuar confirme o IP deste servidor: " -e -i $IP ipdovps
 if [ -z "$ipdovps" ]
@@ -36,20 +13,7 @@ then
 	tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "" ; echo " Você não digitou o IP deste servidor. Tente novamente. " ; echo "" ; echo "" ; tput sgr0
 	exit 1
 fi
-if [ -f "/root/usuarios.db" ]
-then
-tput setaf 6 ; tput bold ;	echo ""
-	echo "Uma base de dados de usuários ('usuarios.db') foi encontrada!"
-	echo "Deseja mantê-la (preservando o limite de conexões simultâneas dos usuários)"
-	echo "ou criar uma nova base de dados?"
-	tput setaf 6 ; tput bold ;	echo ""
-	echo "[1] Manter Base de Dados Atual"
-	echo "[2] Criar uma Nova Base de Dados"
-	echo "" ; tput sgr0
-	read -p "Opção?: " -e -i 1 optiondb
-else
-	awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/usuarios.db
-fi
+
 echo ""
 read -p "Deseja ativar a compressão SSH (pode aumentar o consumo de RAM)? [s/n]) " -e -i n sshcompression
 echo ""
