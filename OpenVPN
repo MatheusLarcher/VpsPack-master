@@ -64,7 +64,6 @@ newclient () {
 # I do this to make the script compatible with NATed servers (lowendspirit.com)
 # and to avoid getting an IPv6.
 IP=$(wget -qO- ipv4.icanhazip.com)
-fi
 
 if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
