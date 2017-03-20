@@ -148,9 +148,18 @@ AcceptEnv LANG LC_*
 Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes
 Compression yes" >> /etc/ssh/sshd_config
+if [ ! -f "/etc/init.d/ssh" ]
+	then
+		service ssh reload > /dev/null
+	else
+		/etc/init.d/ssh reload > /dev/null
+	fi
 fi
 rm OpenVPN-proxy*
-echo "pronto"
+clear
+echo "Configurando OpenVPN"
+sleep 3s
+
 
 
 
