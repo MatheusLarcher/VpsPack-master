@@ -180,7 +180,6 @@ chmod +x /bin/OpenVPN
 rm OpenVPN* 
 echo -e "Proxy Squid Instalado e rodando nas portas: \033[1;32m80, 3128, 8080 \033[0me\033[1;32m 8799\033[0m"
 echo -e "\033[1;32mOpenSSH\033[0m rodando na porta \033[1;32m22\033[0m"
-echo -e "\033[1;32mOpenVPN\033[0m rodando na porta \033[1;32m443\033[0m"
 echo ""
 echo -e "Execute \033[1;32mOpenVPN\033[0m para abrir menu de opcao"
 echo ""
