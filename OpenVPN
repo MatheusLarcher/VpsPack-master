@@ -110,7 +110,7 @@ echo ""
 			echo ""
 			echo "Diga-me um nome para o usuario"
 			echo "Use somente o nome sem caracteres especiais"
-			read -p "Client name: " -e -i client CLIENT
+			read -p "Client name: " CLIENT
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa build-client-full $CLIENT nopass
 			# Generates the custom client.ovpn
