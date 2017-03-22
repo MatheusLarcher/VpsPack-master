@@ -137,6 +137,7 @@ echo ""
 				read -p "Selecione um usuario [1-$NUMBEROFCLIENTS]: " CLIENTNUMBER
 			fi
 			CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
+			rm $CLIENT.ovpn
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa --batch revoke $CLIENT
 			./easyrsa gen-crl
