@@ -30,6 +30,7 @@ branco="\033[1;37m"
 
 
 # Detect Debian users running the script with "sh" instead of bash
+
 if readlink /proc/$$/exe | grep -qs "dash"; then
 	echo "This script needs to be run with bash, not sh"
 	exit 1
@@ -98,10 +99,10 @@ echo ""
 		echo -e "\033[0;31mOpenVPN já está instalado\033[0;31m"
 		echo ""
 		echo -e "\033[0;32m O que você deseja fazer? \033[0;32m"
-		echo -e "\033[1;34m   1) Adicionar novo usuário\033[1;34m"
-		echo -e "\033[1;34m   2) Remover um usuário\033[1;34m"
-		echo -e "\033[1;34m   3) Remover OpenVPN\033[1;34m"
-		echo -e "\033[1;34m   4) Sair\033[1;34m
+		echo -e "\033[1;34m   1) Adicionar novo usuário\033[0m"
+		echo -e "\033[1;34m   2) Remover um usuário\033[0m"
+		echo -e "\033[1;34m   3) Remover OpenVPN\033[0m"
+		echo -e "\033[1;34m   4) Sair\033[0m
 		"
 		read -p "Selecione a opção [1-4]: " option
 		case $option in
@@ -109,7 +110,7 @@ echo ""
 			echo ""
 			echo "Diga-me um nome para o usuario"
 			echo "Use somente o nome sem caracteres especiais"
-			read -p "Client name: " -e -i client CLIENT
+			read -p "Client name: " CLIENT
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa build-client-full $CLIENT nopass
 			# Generates the custom client.ovpn
@@ -136,6 +137,7 @@ echo ""
 				read -p "Selecione um usuario [1-$NUMBEROFCLIENTS]: " CLIENTNUMBER
 			fi
 			CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
+			rm $CLIENT.ovpn
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa --batch revoke $CLIENT
 			./easyrsa gen-crl
@@ -428,11 +430,12 @@ key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
+
+service openvpn restart
 	echo ""
 	echo -e "\033[0;31m CONCLUIDO...! \033[0;31m"
 	sleep 2
 	echo ""
-	echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;32m" ~/"$CLIENT.ovpn"
-	echo -e "\033[1;32m Para mais opções digite (OpenVPN ou PackSSH)! \033[0m"
+	echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;36m" ~/"$CLIENT.ovpn\033[0m"
 fi
 echo -e "\033[0m"
