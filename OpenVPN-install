@@ -183,4 +183,8 @@ echo -e "\033[1;32mOpenSSH\033[0m rodando na porta \033[1;32m22\033[0m"
 echo ""
 echo -e "Execute \033[1;32mOpenVPN\033[0m para abrir menu de opcao"
 echo ""
+echo -e "O \033[1;32mVpsPack \033[0msera instalado!!"
+sleep 2s
+read -p " Pressione enter para continuar ou Ctrl + C para sair "
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
 
