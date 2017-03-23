@@ -116,7 +116,7 @@ echo ""
 			# Generates the custom client.ovpn
 			newclient "$CLIENT"
 			echo ""
-			echo "Client $CLIENT added, configuration is available at" ~/"$CLIENT.ovpn"
+			echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;36m" ~/"$CLIENT.ovpn\033[0m"
 			exit
 			;;
 			2)
