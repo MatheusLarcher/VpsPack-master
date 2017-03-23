@@ -116,7 +116,7 @@ echo ""
 			# Generates the custom client.ovpn
 			newclient "$CLIENT"
 			echo ""
-			echo "Client $CLIENT added, configuration is available at" ~/"$CLIENT.ovpn"
+			echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;36m" ~/"$CLIENT.ovpn\033[0m"
 			exit
 			;;
 			2)
@@ -137,6 +137,7 @@ echo ""
 				read -p "Selecione um usuario [1-$NUMBEROFCLIENTS]: " CLIENTNUMBER
 			fi
 			CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
+cd 			
 			rm $CLIENT.ovpn
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa --batch revoke $CLIENT
