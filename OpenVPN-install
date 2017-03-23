@@ -174,7 +174,7 @@ if [[ "$sshcompression" = 'n' ]]; then
 fi
 echo -e "\033[0m"
 
-wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN && bash OpenVPN
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack/master/OpenVPN && bash OpenVPN
 echo -e "\033[0m"
 mv OpenVPN /bin/OpenVPN
 chmod +x /bin/OpenVPN
