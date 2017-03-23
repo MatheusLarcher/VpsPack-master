@@ -65,19 +65,19 @@ fi
 
 newclient () {
 	# Generates the custom client.ovpn
-	cp /etc/openvpn/client-common.txt ~/$1.ovpn
-	echo "<ca>" >> ~/$1.ovpn
-	cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/$1.ovpn
-	echo "</ca>" >> ~/$1.ovpn
-	echo "<cert>" >> ~/$1.ovpn
-	cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$1.ovpn
-	echo "</cert>" >> ~/$1.ovpn
-	echo "<key>" >> ~/$1.ovpn
-	cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
-	echo "</key>" >> ~/$1.ovpn
-	echo "<tls-auth>" >> ~/$1.ovpn
-	cat /etc/openvpn/ta.key >> ~/$1.ovpn
-	echo "</tls-auth>" >> ~/$1.ovpn
+	cp /etc/openvpn/client-common.txt ~/Vivo_  _$1.ovpn
+	echo "<ca>" >> ~/Vivo_  _$1.ovpn
+	cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/Vivo_  _$1.ovpn
+	echo "</ca>" >> ~/Vivo_  _$1.ovpn
+	echo "<cert>" >> ~/Vivo_  _$1.ovpn
+	cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/Vivo_  _$1.ovpn
+	echo "</cert>" >> ~/Vivo_  _$1.ovpn
+	echo "<key>" >> ~/Vivo_  _$1.ovpn
+	cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/Vivo_  _$1.ovpn
+	echo "</key>" >> ~/Vivo_  _$1.ovpn
+	echo "<tls-auth>" >> ~/Vivo_  _$1.ovpn
+	cat /etc/openvpn/ta.key >> ~/Vivo_  _$1.ovpn
+	echo "</tls-auth>" >> ~/Vivo_  _$1.ovpn
 }
 
 # Try to get our IP from the system and fallback to the Internet.
@@ -116,7 +116,7 @@ echo ""
 			# Generates the custom client.ovpn
 			newclient "$CLIENT"
 			echo ""
-			echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;36m" ~/"$CLIENT.ovpn\033[0m"
+			echo -e "\033[1;32m Seu arquivo está disponivel em \033[1;36m" ~/"Vivo_BR_$CLIENT.ovpn\033[0m"
 			exit
 			;;
 			2)
@@ -138,7 +138,7 @@ echo ""
 			fi
 			CLIENT=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | sed -n "$CLIENTNUMBER"p)
 cd 			
-			rm $CLIENT.ovpn
+			rm *$CLIENT.ovpn
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa --batch revoke $CLIENT
 			./easyrsa gen-crl
