@@ -181,7 +181,7 @@ PORTA=$(grep '^port ' /etc/openvpn/server.conf | cut -d " " -f 2)
 PROTOCOLO=$(grep '^proto ' /etc/openvpn/server.conf | cut -d " " -f 2)
 
 echo -e "
-\033[1;32mOpenSSH\033[0;32m rodando na porta: \033[1;36m22\033[0m"
+ \033[1;32mOpenSSH\033[0;32m rodando na porta: \033[1;36m22\033[0m"
 echo -e " \033[1;32mProxy Squid\033[0;32m Instalado e rodando nas portas: \033[1;36m80, 3128, 8080 \033[0me\033[1;36m 8799\033[0m"
 echo -e " \033[1;32mOpenVPN\033[0;32m Instalado e rodando na porta: \033[1;36m$PORTA\033[0;32m com Protocolo: \033[1;36m$PROTOCOLO\033[0m"
 echo ""
