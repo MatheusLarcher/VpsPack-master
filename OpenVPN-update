@@ -293,8 +293,6 @@ key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
 service openvpn restart
         echo ""
-        echo -e "\033[0;31m CONCLUIDO...! \033[0;31m"
+        echo -e "\033[0;31m CONCLUIDO...! \033[0m"
         sleep 2
         echo ""
-fi
-echo -e "\033[0m"
