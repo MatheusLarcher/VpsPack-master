@@ -62,22 +62,22 @@ else
         echo "Looks like you aren't running this installer on a Debian, Ubuntu or CentOS system"
         exit 5
 fi
-
+nomecoment=$(echo VIVO-🇳🇱)
 newclient () {
         # Generates the custom client.ovpn
-        cp /etc/openvpn/client-common.txt ~/Vivo_🇧🇷_$1.ovpn
-        echo "<ca>" >> ~/Vivo_🇧🇷_$1.ovpn
-        cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "</ca>" >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "<cert>" >> ~/Vivo_🇧🇷_$1.ovpn
-        cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "</cert>" >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "<key>" >> ~/Vivo_🇧🇷_$1.ovpn
-        cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "</key>" >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "<tls-auth>" >> ~/Vivo_🇧🇷_$1.ovpn
-        cat /etc/openvpn/ta.key >> ~/Vivo_🇧🇷_$1.ovpn
-        echo "</tls-auth>" >> ~/Vivo_🇧🇷_$1.ovpn
+        cp /etc/openvpn/client-common.txt ~/$nomecoment'-'$1.ovpn
+        echo "<ca>" >> ~/$nomecoment'-'$1.ovpn
+        cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/$nomecoment'-'$1.ovpn
+        echo "</ca>" >> ~/$nomecoment'-'$1.ovpn
+        echo "<cert>" >> ~/$nomecoment'-'$1.ovpn
+        cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$nomecoment'-'$1.ovpn
+        echo "</cert>" >> ~/$nomecoment'-'$1.ovpn
+        echo "<key>" >> ~/$nomecoment'-'$1.ovpn
+        cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$nomecoment'-'$1.ovpn
+        echo "</key>" >> ~/$nomecoment'-'$1.ovpn
+        echo "<tls-auth>" >> ~/$nomecoment'-'$1.ovpn
+        cat /etc/openvpn/ta.key >> ~/$nomecoment'-'$1.ovpn
+        echo "</tls-auth>" >> ~/$nomecoment'-'$1.ovpn
 }
 
 # Try to get our IP from the system and fallback to the Internet.
@@ -142,7 +142,7 @@ echo ""
                         echo -e "\033[1;36m Data de expiração: \033[1;37m$DATEXP\033[0m"
                         echo " "
                         echo " "
-                        echo -e "\033[1;36m Seu arquivo está disponivel em \033[1;37m" ~/"Vivo_BR_$CLIENT.ovpn\033[0m"
+                        echo -e "\033[1;36m Seu arquivo está disponivel em \033[1;37m" ~/"Vivo_NL_$CLIENT.ovpn\033[0m"
                      fi
 exit
                         ;;
