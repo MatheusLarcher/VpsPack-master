@@ -175,12 +175,10 @@ if [[ "$sshcompression" = 'n' ]]; then
 	grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
 fi
 echo -e "\033[0m"
+rm OpenPack 
 
-wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack/master/OpenVPN && bash OpenVPN
-echo -e "\033[0m"
-mv OpenVPN /bin/OpenVPN
-chmod +x /bin/OpenVPN
-rm OpenVPN* 
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-install && bash OpenVPN-install
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-pack && bash OpenVPN-pack
 echo -e "Proxy Squid Instalado e rodando nas portas: \033[1;32m80, 3128, 8080 \033[0me\033[1;32m 8799\033[0m"
 echo -e "\033[1;32mOpenSSH\033[0m rodando na porta \033[1;32m22\033[0m"
 echo ""
@@ -189,5 +187,5 @@ echo ""
 echo -e "O \033[1;32mVpsPack \033[0msera instalado!!"
 sleep 2s
 read -p " Pressione Enter para continuar ou Ctrl + C para sair "
-wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
+
 
