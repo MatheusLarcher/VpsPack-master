@@ -87,7 +87,6 @@ http_access allow vps3
 http_access allow vps4
 http_access allow vps5
 http_access allow vps6
-http_access allow accept
 #cache deny all
 http_access deny all
 
@@ -140,7 +139,6 @@ http_access allow vps4
 http_access allow vps5
 http_access allow vps6
 #cache deny all
-http_access allow accept
 http_access deny all
 
 # Anonimo
