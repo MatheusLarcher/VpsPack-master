@@ -179,13 +179,12 @@ rm OpenPack
 
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-install && bash OpenVPN-install
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-pack && bash OpenVPN-pack
-echo -e "Proxy Squid Instalado e rodando nas portas: \033[1;32m80, 3128, 8080 \033[0me\033[1;32m 8799\033[0m"
-echo -e "\033[1;32mOpenSSH\033[0m rodando na porta \033[1;32m22\033[0m"
+PORTA=$(grep '^port ' /etc/openvpn/server.conf | cut -d " " -f 2)
+PROTOCOLO=$(grep '^proto ' /etc/openvpn/server.conf | cut -d " " -f 2)
+
+echo -e " \033[1;32mOpenSSH\033[0;32m rodando na porta: \033[1;36m22\033[0m"
+echo -e " \033[1;32mProxy Squid\033[0;32m Instalado e rodando nas portas: \033[1;36m80, 3128, 8080 \033[0me\033[1;36m 8799\033[0m"
+echo -e " \033[1;32mOpenVPN\033[0;32m Instalado e rodando na porta: \033[1;36m$PORTA\033[0;32m com Protocolo: \033[1;36m$PROTOCOLO\033[0m"
 echo ""
-echo -e "Execute \033[1;32mOpenVPN\033[0m para abrir menu de opcao"
-echo ""
-echo -e "O \033[1;32mVpsPack \033[0msera instalado!!"
-sleep 2s
-read -p " Pressione Enter para continuar ou Ctrl + C para sair "
 
 
