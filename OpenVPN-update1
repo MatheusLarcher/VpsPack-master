@@ -293,6 +293,7 @@ key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
 service openvpn restart
         echo ""
+        rm OpenVPN-update*
         echo -e "\033[0;31m CONCLUIDO...! \033[0m"
         sleep 2
         echo ""
