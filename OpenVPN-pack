@@ -27,9 +27,7 @@ yum -y update
 yum -y install git
 git clone https://github.com/matheuslarcher20/OpenVPN.git
 clear
-cd VpsPack
-rm -rf README.md
-rm -rf install
+cd OpenVPN
 for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
@@ -42,9 +40,7 @@ apt-get update
 apt-get install -y git
 git clone https://github.com/matheuslarcher20/OpenVPN.git
 clear
-cd VpsPack
-rm -rf README.md
-rm -rf install
+cd OpenVPN
 for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
@@ -55,6 +51,5 @@ echo ""
 clear
 fi
 cd
-rm -rf install 2> /dev/null
-rm -rf VpsPack 2> /dev/null
-rm /root/VpsPack-install 2> /dev/null
+rm -rf OpenVPN-pack 2> /dev/null
+rm /OpenVPN-pack 2> /dev/null
