@@ -51,5 +51,5 @@ echo ""
 clear
 fi
 cd
-rm -rf OpenVPN-pack 2> /dev/null
-rm /OpenVPN-pack 2> /dev/null
+rm -rf OpenVPN 2> /dev/null
+rm /OpenVPN 2> /dev/null
