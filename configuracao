@@ -32,6 +32,7 @@ fi
 echo "
 Configurando SSH..."
 sleep 3s
+rm /etc/localtime && ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 rm /etc/ssh/sshd_config
 echo "Port 22
 Protocol 2
@@ -87,6 +88,7 @@ http_access allow vps3
 http_access allow vps4
 http_access allow vps5
 http_access allow vps6
+http_access allow accept
 #cache deny all
 http_access deny all
 # Anonimo
@@ -136,6 +138,7 @@ http_access allow vps4
 http_access allow vps5
 http_access allow vps6
 #cache deny all
+http_access allow accept
 http_access deny all
 # Anonimo
 forwarded_for off
@@ -165,11 +168,11 @@ fi
 if [[ "$sshcompression" = 'n' ]]; then
 	grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
 fi
-echo -e "\033[0m"
-rm /etc/localtime && ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-mv OpenVPN /bin/OpenVPN
-chmod +x /bin/OpenVPN
-rm OpenVPN* 
-echo -e "Proxy Squid Instalado e rodando nas portas: \033[1;32m80, 3128, 8080 \033[0me\033[1;32m 8799\033[0m"
-echo -e "\033[1;32mOpenSSH\033[0m rodando na porta \033[1;32m22\033[0m"
-echo ""
+rm OpenPack 
+clear
+echo -e "
+ \033[1;32Contigurações atualizadas\033[0m
+"
+
+
+
