@@ -1,0 +1,2 @@
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-install && bash OpenVPN-install
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-pack && bash OpenVPN-pack
