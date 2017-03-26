@@ -1,3 +1,10 @@
 #/bin/bash
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/configuracao && bash configuracao
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-install && bash OpenVPN-install
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-pack && bash OpenVPN-pack
+rm configuracao
+rm OpenVPN-install
+rm OpenVPN-pack
+echo -e "
+ \033[1;32mInstalacao concluida!!\033[0m
+ "
