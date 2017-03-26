@@ -5,6 +5,7 @@ wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/Op
 rm configuracao
 rm OpenVPN-install
 rm OpenVPN-pack
+rm Install
 echo -e "
  \033[1;32mInstalacao concluida!!\033[0m
  "
