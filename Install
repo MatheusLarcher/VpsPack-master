@@ -7,6 +7,13 @@ rm configuracao /dev/null 2>/dev/null
 rm OpenVPN-install /dev/null 2>/dev/null
 rm OpenVPN-pack /dev/null 2>/dev/null
 rm Install /dev/null 2>/dev/null
+
+read -p "Deseja ativar instalar o VpsPack? [s/n]) " -e -i n resposta
+if [[ "$sshcompression" = 's' ]]; then
+wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/VpsPack-install && bash VpsPack-install
+else
+echo ""
+fi
 echo -e "
  \033[1;32mInstalacao concluida!!\033[0m
  "
