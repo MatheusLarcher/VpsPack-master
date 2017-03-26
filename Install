@@ -1,4 +1,5 @@
 #/bin/bash
+rm /etc/localtime && ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/configuracao && bash configuracao
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-install && bash OpenVPN-install
 wget https://raw.githubusercontent.com/matheuslarcher20/VpsPack-master/master/OpenVPN-pack && bash OpenVPN-pack
