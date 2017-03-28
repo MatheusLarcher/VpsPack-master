@@ -143,8 +143,6 @@ IP=$(wget -4qO- "http://whatismyip.akamai.com/")
         echo "port $PORT
 proto $PROTOCOL
 dev tun
-sndbuf 0
-rcvbuf 0
 ca ca.crt
 cert server.crt
 key server.key
@@ -281,8 +279,6 @@ exit 0' > $RCLOCAL
 auth-user-pass
 dev tun
 proto $PROTOCOL
-sndbuf 0
-rcvbuf 0
 remote $IP $PORT
 http-proxy-option CUSTOM-HEADER X-Online-Host  sdp.vivo.com.br
 http-proxy $IP 80
@@ -293,7 +289,6 @@ persist-tun
 remote-cert-tls server
 cipher AES-256-CBC
 comp-lzo
-setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
 service openvpn restart
