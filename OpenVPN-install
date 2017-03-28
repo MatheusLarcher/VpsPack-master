@@ -127,7 +127,7 @@ IP=$(wget -4qO- "http://whatismyip.akamai.com/")
         chown -R root:root /etc/openvpn/easy-rsa/
         rm -rf ~/EasyRSA-3.0.1.tgz
         cd /etc/openvpn/easy-rsa/
-        # Create the PKI, set up the CA, the DH params and the server + client certificates
+        # Create the PKI, set up the CA, the DH params and the server certificates
         ./easyrsa init-pki
         ./easyrsa --batch build-ca nopass
         ./easyrsa gen-dh
