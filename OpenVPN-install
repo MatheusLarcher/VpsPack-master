@@ -150,6 +150,9 @@ cert server.crt
 key server.key
 dh dh.pem
 tls-auth ta.key 0
+plugin /usr/share/openvpn/plugin/lib/openvpn-auth-pam.so /etc/pam.d/login
+client-cert-not-required
+username-as-common-name
 topology subnet
 server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
