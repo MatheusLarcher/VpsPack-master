@@ -1,0 +1,39 @@
+#!/bin/bash
+rm /root/teste2 > /dev/null 2> /dev/null
+for users in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi system- |grep -vi openvpn`
+do
+if cat /etc/VpsPackdir/limite/$users > /dev/null 2> /dev/null
+then
+limitecs=$(cat /etc/VpsPackdir/limite/$users)
+else
+limitecs="null"
+fi
+if (cat /etc/VpsPackdir/senha/$users > /dev/null 2> /dev/null)
+then
+senha=$(cat /etc/VpsPackdir/senha/$users)
+else
+senha="null"
+fi
+data=$(chage -l $users |grep -i co |awk -F : '{print $2}')
+if [ $data = never ] 2> /dev/null
+then
+date="Nunca"
+fi
+usertotal=$(awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi system- |grep -vi openvpn| wc -l)
+calculo=$(ps x | grep "sshd:" |grep "priv" |grep -vi root |wc -l)
+if (cat /etc/openvpn/openvpn-status.log > /dev/null 2> /dev/null)
+then
+usersvpn=$(cat /etc/openvpn/openvpn-status.log |grep -w $users| grep 10.8 | awk -F , '{print $2}')
+calculovpn=$(cat /etc/openvpn/openvpn-status.log | grep 10.8 | cut -d "," -f 2 | wc -l)
+else
+usersvpn=''
+calculovpn=''
+fi
+usernum=$(ps -u $users |grep sshd |wc -l)
+if [[ $usersvpn = $users ]]; then
+status='Online'
+else
+status='Offline'
+fi
+echo "$users:$senha:$data:$usernum:$limitecs:$status" >> /root/teste2
+done
