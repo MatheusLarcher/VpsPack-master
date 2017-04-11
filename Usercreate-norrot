@@ -29,10 +29,10 @@ fi
 
 
 sizemax=$(echo ${#name})
-if [[ $sizemax -gt 9 ]]
+if [[ $sizemax -gt 12 ]]
 then
 echo -e "\033[1;31mErro!! \033[0;31mVocê digitou um nome de usuário muito grande,
- Use no máximo 9 caracteres!\033[0m"
+ Use no máximo 12 caracteres!\033[0m"
 exit
 else
 echo ""
@@ -53,7 +53,6 @@ exit
 else
 echo ""
 fi
-user=$user.ADM
    valid=$(date '+%C%y/%m/%d' -d " +$daysrnf days")
 		datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
 useradd -m -d /clientes/$user $user -e $valid && cp /bin/criar /clientes/$user && cp /bin/apagar /clientes/$user && cp /bin/pack /clientes/$user
@@ -61,6 +60,7 @@ useradd -m -d /clientes/$user $user -e $valid && cp /bin/criar /clientes/$user &
 limit $user 1
 chmod 7 /clientes
 chmod 0 /etc
+chmod 4 /etc/passwd
 	    echo "$pass" > /etc/VpsPackdir/senha/$user
 	    echo "$valid" > /etc/VpsPackdir/date/$user
 clear
