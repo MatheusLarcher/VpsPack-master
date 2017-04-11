@@ -56,7 +56,7 @@ fi
 useradd -m -d /clientes/$user $user -e $valid && cp /bin/criar /clientes/$user && cp /bin/apagar /clientes/$user && cp /bin/pack /clientes/$user
 (echo $pass; echo $pass)|passwd $user 2>/dev/null
 limit $user 1
-chmod +rwx /clientes
+chmod 7 /clientes
 chmod 0 /etc
 chmod -rw /bin
 chmod +x /bin/pack
