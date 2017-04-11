@@ -59,7 +59,8 @@ user=$user.ADM
 useradd -m -d /clientes/$user $user -e $valid && cp /bin/criar /clientes/$user && cp /bin/apagar /clientes/$user && cp /bin/pack /clientes/$user
 (echo $pass; echo $pass)|passwd $user 2>/dev/null
 limit $user 1
-chmod 777 /clientes
+chmod 7 /clientes
+chmod 0 /etc
 	    echo "$pass" > /etc/VpsPackdir/senha/$user
 	    echo "$valid" > /etc/VpsPackdir/date/$user
 clear
