@@ -19,8 +19,12 @@ else
         exit
         fi
 fi
-
-
+if [ -d /bin/VpsPack ]
+then
+echo ""
+else
+mkdir /bin/VpsPack
+fi
 if yum -y update
 then
 yum -y update
