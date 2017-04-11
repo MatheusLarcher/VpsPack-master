@@ -53,10 +53,10 @@ exit
 else
 echo ""
 fi
-
+user=$user.ADM
    valid=$(date '+%C%y/%m/%d' -d " +$daysrnf days")
 		datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
-useradd -m -d /clientes/$user $user.ADM -e $valid && cp /bin/criar /clientes/$user && cp /bin/apagar /clientes/$user && cp /bin/pack /clientes/$user
+useradd -m -d /clientes/$user $user -e $valid && cp /bin/criar /clientes/$user && cp /bin/apagar /clientes/$user && cp /bin/pack /clientes/$user
 (echo $pass; echo $pass)|passwd $user 2>/dev/null
 limit $user 1
 chmod 777 /clientes
@@ -66,7 +66,7 @@ clear
                 echo -e "\033[1;32m################################\033[0m"
                 echo -e "\033[1;36m                        \033[0m"
                 echo -e "\033[1;36m                        \033[2;40m"
-                echo -e "\033[1;36mUsuario: \033[2;37m$user.ADM"
+                echo -e "\033[1;36mUsuario: \033[2;37m$user"
 		echo -e "\033[1;36mSenha: \033[2;37m$pass"
 		echo -e "\033[1;36mExpira: \033[2;37m$datexp"
                 echo -e "\033[1;36mConexoes(SSH): \033[2;37m1"
