@@ -51,7 +51,6 @@ rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
 chmod +x /bin/$arqs
 done
-chmod 0 /etc
 echo -e "\033[1;37mConcluido, Execute o comando \033[1;33mVpsPack\033[1;37m como root \033[0m"
 fi
 cd
