@@ -19,12 +19,6 @@ else
         exit
         fi
 fi
-if [ -d /bin/VpsPack ]
-then
-echo ""
-else
-mkdir /bin/VpsPack
-fi
 if yum -y update
 then
 yum -y update
@@ -37,9 +31,8 @@ rm -rf install
 for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
-rm /bin/VpsPack/$arqs 2>/dev/null
-mv $arqs /bin/VpsPack
-chmod +x /bin/VpsPack/$arqs
+mv $arqs /bin
+chmod +x /bin/$arqs
 done
 echo -e "\033[1;33mConcluido, Execute o comando \033[1;32mVpsPack\033[1;33m como root \033[0m"
 else
@@ -53,9 +46,8 @@ rm -rf install
 for arqs in `ls`
 do
 rm /bin/$arqs 2>/dev/null
-rm /bin/VpsPack/$arqs 2>/dev/null
-mv $arqs /bin/VpsPack
-chmod +x /bin/VpsPack/$arqs
+mv $arqs /bin
+chmod +x /bin/$arqs
 done
 echo -e "\033[1;37mConcluido, Execute o comando \033[1;33mVpsPack\033[1;37m como root \033[0m"
 fi
