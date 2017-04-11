@@ -2,16 +2,8 @@
 	echo -e "\033[1;32mNome do novo usuario ADM:\033[0;37m"; read -p " " user
 	echo -e "\033[1;32mSenha para o usuario $user:\033[0;37m"; read -p " " pass
 	echo -e "\033[1;32mQuantos dias usuario $user deve durar:\033[0;37m"; read -p " " daysrnf
-if cat /etc/passwd |grep $user: |grep -vi [a-z]$user |grep -v [0-9]$user > /dev/null
-	then
-		echo -e "\033[1;31mUsuario $user ja existe\033[0m"
-	exit
-  else
-  echo ""
-  fi
 
-
-if (echo $name | egrep '[^a-zA-Z0-9]' &> /dev/null)
+if (echo $name | egrep '[^a-zA-Z0-9]')
 then
 echo -e "\033[1;31mErro!! \033[0;31mVocê digitou um nome de usuário inválido! \033[0m"
 exit
@@ -19,7 +11,7 @@ else
 echo ""
 fi
 
-if (echo $pass | egrep '[^a-zA-Z0-9]' &> /dev/null)
+if (echo $pass | egrep '[^a-zA-Z0-9]')
 then
 echo -e "\033[1;31mErro!!\033[0;31m Você digitou uma senha inválida! \033[0m"
 exit
@@ -46,7 +38,7 @@ exit
 else
 echo ""
 fi
-if (echo $daysrnf | egrep '[^0-9]' &> /dev/null)
+if (echo $daysrnf | egrep '[^0-9]')
 then
 echo -e "\033[1;31mErro!! \033[0;31mVocê digitou uma data inválida!\033[0m"
 exit
