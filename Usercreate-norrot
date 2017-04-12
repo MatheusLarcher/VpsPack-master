@@ -61,7 +61,7 @@ limit $user 1
 chmod 000 /etc/*
 chmod 111 /bin/*
 chmod 555 /bin/pack
-chmod 555 /clientes/$user/*
+chmod 777 /clientes/$user/*
 chmod 777 /clientes
 	    echo "$pass" > /etc/VpsPackdir/senha/$user
 	    echo "$valid" > /etc/VpsPackdir/date/$user
