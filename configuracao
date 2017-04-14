@@ -34,10 +34,10 @@ echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 # Remover não utilizado
-apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
-apt-get -y --purge remove sendmail*;
-apt-get -y --purge remove bind9*;
+apt-get -y --purge remove samba* 1> /dev/null 2> /dev/null
+apt-get -y --purge remove apache2* 1> /dev/null 2> /dev/null
+apt-get -y --purge remove sendmail* 1> /dev/null 2> /dev/null
+apt-get -y --purge remove bind9* 1> /dev/null 2> /dev/null
 
 function sshd_config(){ echo "Port 22
 Protocol 2
