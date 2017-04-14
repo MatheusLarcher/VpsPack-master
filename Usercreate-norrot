@@ -55,6 +55,7 @@ mkdir /clientes
 fi
 valid=$(date '+%C%y/%m/%d' -d " +$daysrnf days")
 datexp=$(date "+%d/%m/%Y" -d "+ $daysrnf days")
+ADM=$(who -m --ips)
 useradd -m -d /clientes/$user $user -e $valid && cp /bin/criar /clientes/$user && cp /bin/apagar /clientes/$user && cp /bin/pack /clientes/$user
 (echo $pass; echo $pass)|passwd $user 2>/dev/null
 limit $user 1
@@ -66,6 +67,7 @@ chmod 777 /clientes/$user/*
 chmod 777 /clientes
 	    echo "$pass" > /etc/VpsPackdir/senha/$user
 	    echo "$valid" > /etc/VpsPackdir/date/$user
+	    echo "$ADM" > /etc/VpsPackdir/UsuariosADM/$user
 clear
                 echo -e "\033[1;32m################################\033[0m"
                 echo -e "\033[1;36m                        \033[0m"
