@@ -7,6 +7,7 @@ rm configuracao /dev/null 2>/dev/null
 rm OpenVPN-install /dev/null 2>/dev/null
 rm Install /dev/null 2>/dev/null
 rm VpsPack-install /dev/null 2>/dev/null
+apt-get install screen
 cache-detalhesusers
 echo " Execute cache-detalhesusers.install em uma seção screen. "
 echo -e "
