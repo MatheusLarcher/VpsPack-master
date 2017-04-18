@@ -23,6 +23,7 @@ if yum -y update
 then
 yum -y update
 yum -y install git
+yum -y install screen
 git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
 cd VpsPack
@@ -37,6 +38,7 @@ done
 echo -e "\033[1;33mConcluido, Execute o comando \033[1;32mVpsPack\033[1;33m como root \033[0m"
 else
 apt-get update
+apt-get install screen
 apt-get install -y git
 git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
